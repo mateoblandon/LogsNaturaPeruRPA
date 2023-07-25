@@ -1,0 +1,31 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Activo_Link_a_Cloud_Watch&Flowchart_1",
+        "Activo_Lista_de_exportar_resultados_permitida&Flowchart_1",
+        "Es_valido_exportar_resultados_como&Flowchart_1",
+        "Activo_Exportar_resultados_como&Flowchart_1",
+        "Activo_Lista_de_horas_permitidas&Flowchart_1",
+        "Es_valido_numero_de_horas&Flowchart_1",
+        "Activo_Numero_de_horas_de_consulta&Flowchart_1",
+        "Activo_Contrasena_portal_AWS&Flowchart_1",
+        "Activo_Usuario_portal_AWS&Flowchart_1",
+        "Activo_Link_de_acceso_a_portal_AWS&Flowchart_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}
