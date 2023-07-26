@@ -1,0 +1,31 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Activo_Lista_de_correos_de_copia&Flowchart_1",
+        "Activo_Lista_de_correos_de_destinatarios&Flowchart_1",
+        "Activo_Servidor_SMTP&Flowchart_1",
+        "Activo_Puerto_SMTP&Flowchart_1",
+        "Activo_Contrasena_correo_emisor_numrot&Flowchart_1",
+        "Activo_Correo_emisor_numrot&Flowchart_1",
+        "Activo_Ruta_de_salida&Flowchart_1",
+        "Es_el_queue_no_nulo&Flowchart_1",
+        "Elemento_a_procesar&Flowchart_1",
+        "Fecha_y_hora_de_ejecucion&Flowchart_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}
