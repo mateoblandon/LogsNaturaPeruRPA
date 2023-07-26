@@ -12,7 +12,6 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "Debe_parar&Flowchart_1",
         "Activo_Lista_de_correos_de_copia&Flowchart_1",
         "Activo_Lista_de_correos_de_destinatarios&Flowchart_1",
         "Activo_Servidor_SMTP&Flowchart_1",

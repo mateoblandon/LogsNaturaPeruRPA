@@ -12,6 +12,7 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "Nombre_de_carpeta_nueva&Flowchart_1",
         "Archivo_comprimido&Flowchart_1",
         "Activo_Ruta_de_salida&Flowchart_1",
         "Activo_Formato_de_nombre_de_archivo_descargado&Flowchart_1",
