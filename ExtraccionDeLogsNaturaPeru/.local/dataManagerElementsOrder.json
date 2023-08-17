@@ -12,6 +12,7 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "Extension_de_archivo&Flowchart_1",
         "Hay_resultados_en_consulta&Flowchart_1",
         "Nombre_de_carpeta_nueva&Flowchart_1",
         "Archivo_comprimido&Flowchart_1",
