@@ -12,6 +12,9 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "Contador_de_archivos_de_descarga_de_ejecución_fallida_anterior&Flowchart_1",
+        "Sesion_Portal_AWS_iniciada&Flowchart_1",
+        "Sesion_Cloud_Watch_iniciada&Flowchart_1",
         "Extension_de_archivo&Flowchart_1",
         "Hay_resultados_en_consulta&Flowchart_1",
         "Nombre_de_carpeta_nueva&Flowchart_1",
