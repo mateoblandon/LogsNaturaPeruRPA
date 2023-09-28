@@ -124,7 +124,11 @@
       <Variable x:TypeArguments="x:String" Name="Extension_de_archivo" />
       <Variable x:TypeArguments="x:Boolean" Name="Sesion_Cloud_Watch_iniciada" />
       <Variable x:TypeArguments="x:Boolean" Name="Sesion_Portal_AWS_iniciada" />
-      <Variable x:TypeArguments="x:Int32" Default="0" Name="Contador_de_archivos_de_descarga_de_ejecución_fallida_anterior" />
+      <Variable x:TypeArguments="x:Int32" Name="Contador_de_archivos_de_descarga_de_ejecución_fallida_anterior">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" />
+        </Variable.Default>
+      </Variable>
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -384,7 +388,7 @@
                                           <av:PointCollection x:Key="ConnectorLocation">640,979.5 640,1019.5</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Sequence DisplayName="Eliminar archivos de descarga de ejcución fallida anterior" sap:VirtualizedContainerService.HintSize="668,1994" sap2010:WorkflowViewState.IdRef="Sequence_152">
+                                      <Sequence DisplayName="Eliminar archivos de descarga de ejcución fallida anterior" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_152">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -558,17 +562,17 @@
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <av:Point x:Key="ShapeLocation">550,1519.5</av:Point>
-                                                      <av:Size x:Key="ShapeSize">200,83</av:Size>
-                                                      <av:PointCollection x:Key="ConnectorLocation">650,1602.5 650,1619.5</av:PointCollection>
+                                                      <av:Size x:Key="ShapeSize">200,81</av:Size>
+                                                      <av:PointCollection x:Key="ConnectorLocation">650,1600.5 650,1619.5</av:PointCollection>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <Sequence DisplayName="Obtener logs" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_95">
+                                                  <Sequence DisplayName="Obtener logs" sap:VirtualizedContainerService.HintSize="1298,2161" sap2010:WorkflowViewState.IdRef="Sequence_95">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="1236,53" sap2010:WorkflowViewState.IdRef="CommentOut_8">
+                                                    <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="1236,52" sap2010:WorkflowViewState.IdRef="CommentOut_8">
                                                       <ui:CommentOut.Body>
                                                         <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="608,1028" sap2010:WorkflowViewState.IdRef="Sequence_145">
                                                           <sap:WorkflowViewStateService.ViewState>
@@ -630,28 +634,78 @@
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
                                                     </ui:CommentOut>
-                                                    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Utilizar Navegador Chrome: AWS Management Console" sap:VirtualizedContainerService.HintSize="1236,1981" sap2010:WorkflowViewState.IdRef="NApplicationCard_12" InteractionMode="DebuggerApi" ScopeGuid="d4590b30-50af-47a2-9f7d-46f4c9036c74" Version="V2" WindowResize="Maximize">
+                                                    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Utilizar Navegador Chrome: AWS Management Console" sap:VirtualizedContainerService.HintSize="1236,1958" sap2010:WorkflowViewState.IdRef="NApplicationCard_12" InteractionMode="DebuggerApi" ScopeGuid="d4590b30-50af-47a2-9f7d-46f4c9036c74" Version="V2" WindowResize="Maximize">
                                                       <uix:NApplicationCard.Body>
                                                         <ActivityAction x:TypeArguments="x:Object">
                                                           <ActivityAction.Argument>
                                                             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                                                           </ActivityAction.Argument>
-                                                          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="1202,1763" sap2010:WorkflowViewState.IdRef="Sequence_125">
+                                                          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="1202,1735" sap2010:WorkflowViewState.IdRef="Sequence_125">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
-                                                            <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="1140,145" sap2010:WorkflowViewState.IdRef="LogMessage_70" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Se abrió de nuevo el navegador&quot;]" />
-                                                            <Delay Duration="00:00:06" sap:VirtualizedContainerService.HintSize="1140,91" sap2010:WorkflowViewState.IdRef="Delay_30" />
-                                                            <Sequence DisplayName="Llegar a ventana de queries" sap:VirtualizedContainerService.HintSize="1140,83" sap2010:WorkflowViewState.IdRef="Sequence_98">
+                                                            <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="1140,141" sap2010:WorkflowViewState.IdRef="LogMessage_70" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Se abrió de nuevo el navegador&quot;]" />
+                                                            <Delay Duration="00:00:07" sap:VirtualizedContainerService.HintSize="1140,90" sap2010:WorkflowViewState.IdRef="Delay_30" />
+                                                            <Sequence DisplayName="Llegar a ventana de queries" sap:VirtualizedContainerService.HintSize="1016,3350" sap2010:WorkflowViewState.IdRef="Sequence_98">
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
-                                                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Clic 'CloudWatch'" sap:VirtualizedContainerService.HintSize="954,157" sap2010:WorkflowViewState.IdRef="NClick_60" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d4590b30-50af-47a2-9f7d-46f4c9036c74" Version="V3">
+                                                              <uix:NCheckState DisplayName="Comprobar estado de aplicación 'CloudWatch'" sap:VirtualizedContainerService.HintSize="954,985" sap2010:WorkflowViewState.IdRef="NCheckState_9" ScopeIdentifier="d4590b30-50af-47a2-9f7d-46f4c9036c74" Version="V3">
+                                                                <uix:NCheckState.IfExists>
+                                                                  <Sequence DisplayName="Aparece el destino" sap:VirtualizedContainerService.HintSize="450,258" sap2010:WorkflowViewState.IdRef="Sequence_158">
+                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                      </scg:Dictionary>
+                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                    <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_113" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;SÍ apareció CloudWatch en la ventana de visitados recientemente&quot;]" />
+                                                                  </Sequence>
+                                                                </uix:NCheckState.IfExists>
+                                                                <uix:NCheckState.IfNotExists>
+                                                                  <Sequence DisplayName="No aparece el destino" sap:VirtualizedContainerService.HintSize="450,768" sap2010:WorkflowViewState.IdRef="Sequence_159">
+                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                      </scg:Dictionary>
+                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                    <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_114" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;NO apareció CloudWatch en la ventana de visitados recientemente&quot;]" />
+                                                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Clic 'Volver a cargar'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_98" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d4590b30-50af-47a2-9f7d-46f4c9036c74" Version="V3">
+                                                                      <uix:NClick.Target>
+                                                                        <uix:TargetAnchorable DesignTimeRectangle="80, 49, 28, 28" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Volver a cargar'" FullSelectorArgument="&lt;ctrl name='Uso de memoria de Página de inicio de la consola | us-east-1: 12*' role='pane' /&gt;&lt;ctrl name='Volver a cargar' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Uso de memoria de Página de inicio de la consola | us-east-1: 12*' role='pane' /&gt;&lt;ctrl name='Volver a cargar' role='push button' automationid='' check:text='Volver a cargar' /&gt;" Guid="4fc822c1-f268-408d-91ff-0d1c8c9b87e6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGYSURBVFhH7ZTLSwJRFIf7T4uybHSazMpF0aZNZQ8jepAlZYj5LonWpiKWWquiTbWodvmamSBJ8OQ5XAQt5Q5MtGg+uOD87plzPmbG2wd/jCFgCBgChoBmAVV9h2A4Bs7VdRBt0yCM2WFpxQWhyAkoqsqqAMLRU/arN5oEcvlrGtg/NPrjskh2yBduSAaveeAWSFykWoNwQKlcZjsAb8US+ANhGDAJrRpdBYrNAYMjVmqaSKZZ2k6j0QDXxtbvCPiOg9TQ7TlkyXe8Pn/bcF0FJh2z1PD55ZUl7eBH2TkcFw9cAiazSA3xMesNl8CwIJHAR63GEv3gEpiZmyeBh8cnlnSnKsuw5/FCOpNlSW+4BPBQQYHt3X2WdGdzx021noMjlvSGS6BSqTT/hhZqjOdBN+Jn51SD3wzewwOXAJJMZ6g5rkgsDtWqTLmiKHB7dw8LzjXaw8Moe5mjPR64BZCrXAEEcaIl0rnMVhvVaEGTACLLCgRCUVhcdoE4PgWS3UHvPdV8Qp/1OqviR7OA3hgChoAh8N8FAL4AzS1gHznU1p0AAAAASUVORK5CYII=" InformativeScreenshot="553d7308680cb33c8c54c9a9f271a088.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Página de inicio de la consola | us-east-1 - Google Chrome' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                                                                          <uix:TargetAnchorable.Anchors>
+                                                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                                                              <uix:Target DesignTimeRectangle="48, 49, 28, 28" ElementType="Button" FriendlyName="'Adelante'" FullSelectorArgument="&lt;ctrl name='Uso de memoria de Página de inicio de la consola | us-east-1: 12*' role='pane' /&gt;&lt;ctrl name='Adelante' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Uso de memoria de Página de inicio de la consola | us-east-1: 12*' role='pane' /&gt;&lt;ctrl name='Adelante' role='push button' automationid='' check:text='Adelante' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACeSURBVFhH7dVLCoAwDARQ738kEUFrY/VCXUaDn5XU2gl0YQa6EXQemtaGK8cABjCAASAAzQs7P3OM8bzyPRDATcRt10MICCClg/MHYseUIOAZQBEqQ4ggVACSUkQWwO/TLg/+siYK593pZAEorI8lqaUKyIm88ntban+Ct5SWS2AAUi6BAFJW9SAar/JaR7Fsz6o/I40YwAAG+DuAeQO/sMEvSGCkMQAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector, Image" />
+                                                                            </scg:List>
+                                                                          </uix:TargetAnchorable.Anchors>
+                                                                        </uix:TargetAnchorable>
+                                                                      </uix:NClick.Target>
+                                                                    </uix:NClick>
+                                                                    <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_115" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Se le dio clic en refrescar página&quot;]" />
+                                                                    <Delay DisplayName="Retraso" Duration="00:00:04" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Delay_44" />
+                                                                  </Sequence>
+                                                                </uix:NCheckState.IfNotExists>
+                                                                <uix:NCheckState.Target>
+                                                                  <uix:TargetAnchorable BrowserURL="https://us-east-1.console.aws.amazon.com/console/home?region=us-east-1#" CvTextArgument="CloudWatch" CvType="Text" DesignTimeRectangle="356, 295, 62, 14" DesignTimeScaleFactor="0.800000011920929" ElementType="Text" FriendlyName="'CloudWatch'" FullSelectorArgument="&lt;webctrl aaname='CloudWatch' parentid='ref_1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='CloudWatch' parentid='ref_1' tag='A' type='' class='awsui_link_4c84z_1c97a_93 awsui_variant-secondary_4c84z_1c97a_140 awsui_font-size-body-m_4c84z_1c97a_416' check:innerText='CloudWatch' /&gt;" Guid="834a0a84-f66f-406c-8ca9-2f00a04d9ebb" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEIAAAASCAYAAADv2ggfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPMSURBVFhH7ZbZS1VRFMb7B3quh6iooHroLSooChqJIoqikSgaoOitSIqiTLOBNCrKBhqsrEghKSPN4apkDjlrKk5paZrX4Tpc9Xodvva3Ovt6PCl4k3rpfnA4++6z91lr/fZa69wJ8EnkA2HIB8KQD4ShMYFw9w/C0e3G4KAxMU4NqBe1dLnl/i9EM/SfcYym30B8b+uBf0wZFl/7iJ2Pc5FW3Yr8unYZO3v7jVXj048OF9bd/YTqli4E26pQVN9hPAFyatvk0spTtkNTa9DbP2DMDNdYgqTf9J9xjKZhIHJr2zH7fBIuxleiqrlLfpfbnX8NREO7C0cii3A16YvMd7r6sOZ2JrY+yoGr71fgJ96UIvB9hYxH0liC9ApE38AgDrwowPWUamNmSFYQHcphwmLWnI+rkDSneLLh2XUypjjWp93Y2Yvjr0sk0HtpX+VOIK8KGrA9LFcCJ/TVoRlYeSsD9QoSwWy6n42MGoecOrNnxc10bH6QjcyvDvS4B3BD+Tv5dDx2Pcn12KZ/hHtQxXMt+QuanW7xPyKvHkejirH0ehqiPzcOK3UPCAazRAWWUtlizAzJDILGd6hxkAJAZ0OSquQ352NL7TgcUWTsgow5Z93zIuc7FoSkCoialm4su5Em95gSO05Gl0qW0A+CWa8yh74RREWTU/bElzVhuQLS5OxFyY9OzA/+AFt5M9p7+qRE9j0vwNl3Zah19Kjy6xYQG+9niX3ORRU2YNHVVNjV4Wh5QNAAH7ImrTKDoHMkyoAo3pkZnxs6RgXBIHmSeo8uDd6ZCTxNBk5HCSMss1YyMzK/XqDok+Na7mHwa+/8yihetK/T3mqLspaG2b6WB0SXWrzhXhbeFjcaM0Myg+CYhvVLzI6MBmKkPWZHGDR7wX51kgTNUjj0shDHokoEBsV+xYO6klgFP1ViOqPM9imrLcorENQjdRKrVH3yy6HF3sEXbAvLkZplmjIt06sd8px3OsjGx6D3hOfLHn4aGRjnrHvq1Pt1j6CyvrVh3qUUbHmYLTaYsixTBsQTpgjrckKljM37eZlBWG1RXoNgfQXElmOiXyymn0vEpFNx0lyYZgvVCex9li+Zw6yZejYRc4KS5K6zqFA1xmn+iZgVaBOg3EMQFNewqc29kCzPWF7akTZV2+wTzAqKIAnU/PVgRswMsEmQXKtPnf1n99M8TDmTIODpX4LqITPUWn4B2XgJ0ysQWqxJktVOjCRCY7Oyfr+5h3vNHVmLa+non4rvZkMci7z90+YB0ao2Mb3/p2vEr8b/Lh8IQz4QIuAnoSl6r44KgvoAAAAASUVORK5CYII=" InformativeScreenshot="24aaad4d9266a4dcfd52859e6dd49dc8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Página de inicio de la consola | us-east-1' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                                                    <uix:TargetAnchorable.Anchors>
+                                                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                                                        <uix:Target CvType="Icon" DesignTimeRectangle="328, 293, 19, 19" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='IMG' type='' class='' aaname='CloudWatch' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM0SURBVEhLvZTXT5NRGMa9disS497GhQYRFRUZGpwExIWCAwRx4GTIVNSKxhiNAdcVeGXEO6kVkCEKAspIgZYiQ0YDhSLS0gLFmMfzffQcv89WvcLnD3ie8zvP+74jMIz6P+aqZaH4vPws6lecQ+PKC2hyCEOLYwTUayLR7hQFzfpoaJ1j0bUxHt9cL0PnnoDezddg9LiO/q03YNqeiO87b+GH522zo8BcsfgUapaGotbuDB/QYH+eBFxEy6pwPqBt7SVo1kWjc0MMCYhDNwnocb8C/aarMJCAvi0SmLYlYnDHTbOjwLxq0Ukol5wWE9iLCdpEBHHWCUgAFTOXLwzhAywJaMDfCBJ4Ai6AI6Bi5hXzj6Ny4QlUCwjqHMPQ8+wdTCo1+vIVMGZUoN0rUdTBV64DNzEBFTMvm3uMBARDvuAXgS79I74+yUCduQO1pwQDFY3o8L8HbUDSbwTxrAMqZv5pdiAJCDIThEDlHgtDodKig86wFPR/UMEoK0OP5IXVDqiYecnMoyxAbhcKXY4c2pTsP3QwNEWD9e3QP86Ehrxe2AEVMy+acQQlswL4gM6nOdA8eIUqYsw6IOZd99MxoGjBgPwL9GmFaHWOgVFaCn2yTLQHVMy8YOohFE0nAYTAWN2M8gXBQx2Yp6gzSQrtQxlqzV+kiUyFIbMcatc4mEgPwimiYubvp/ijcNphnqA7swxKb4mogz4S+PseGPOr0eqRAG14qmgPqJj528kHhwIIgXwL+bvXBLdYhd7iWihcomAorbPYA93zAqj97lrsARUzz7M9gHwaYCbgO5gTiPJ5QdAXKFHjEs06qHW4AFNTBxpWR1jcIipmnm2zD7m2voxA2AFXssIjDrq8SmjI33ckS9GvbIE+oxzGIhUaXWPZLWomU0TFzLMm7EWOzX5C4GudwDymCrcYNPjdQZ2XhAS0ouuRDIbcSrYHHAEVM88Yt5sPsErABQj2gE6R0ikCuqwKaCRpoj2gYuaysT7IHL8HbyYSgkkcwR86IAFcB9ZuEZ0iKmYuHeUN2RifvxMIOmC3yMo1pWLmL0d6QTp6FyPgO/gHgXAPuABKQMXMh0PDaA78BDuFQlYQkaLNAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
+                                                                      </scg:List>
+                                                                    </uix:TargetAnchorable.Anchors>
+                                                                  </uix:TargetAnchorable>
+                                                                </uix:NCheckState.Target>
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                              </uix:NCheckState>
+                                                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Clic 'CloudWatch'" sap:VirtualizedContainerService.HintSize="954,157" sap2010:WorkflowViewState.IdRef="NClick_99" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d4590b30-50af-47a2-9f7d-46f4c9036c74" Version="V3">
                                                                 <uix:NClick.Target>
                                                                   <uix:TargetAnchorable BrowserURL="https://us-east-1.console.aws.amazon.com/console/home?region=us-east-1#" CvTextArgument="CloudWatch" CvType="Text" DesignTimeRectangle="414, 288, 77, 18" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'CloudWatch'" FullSelectorArgument="&lt;webctrl id='link-self:r51:' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='link-self:r51:' tag='A' type='' class='awsui_link_4c84z_ynfp7_93 awsui_variant-secondary_4c84z_ynfp7_140 awsui_font-size-body-m_4c84z_ynfp7_414' aaname='CloudWatch' check:innerText='CloudWatch' /&gt;" Guid="4f848f98-8292-4e21-bf0c-f07692db81fa" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFEAAAAWCAYAAAC40nDiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASNSURBVFhH7ZZbiFZVFMeFKCKIHgqJgqKCCimKogsIBhU9GL0EVk89BEEvPZnazcprZaaOkSVkiAaRBYFZRs7oXBzn5jSX1Bln9HNGnRmd6zf3mW8uy/NbnXXmfMcz33SaU0/nD5v5Zu+19/6v/7rss0ASzBuJiDEgETEGJCLGgETEGPCPRRydmJL8ph5p6hp2Z+LHxNS0lJ5L/6d3REH1xQHlA69cuErE053D8toPJ+W+T0p1vLCrVv7qGJRLA+Ny/6fHJK/kvGsZP4bGJ2XpNzV6R23bgDyypVwKmnvc1RmRg46VtaTlibxK3RMn3vipQfnAKxeyRPy2sk1ufPewPO9s/K66Q/af7JR1h1Iakf9bxPTohCz58risOtDsrop0Do7LA5+Vyb1OcNv7x9xZUY7YsicX7PzfG7vdmdyILGKjk4F3rCuRbcWtMh2SvbOJOOaUecPlIR38jorM5LTezegbmfBEBAj43M4/ZXDsbyfKW9Ny25piufWjIik626tz3LlsT70n9pRDvmsoo7apnhE939AznJHHtlWEiogdQWIvZwATccC5n/mq8/3SHxIoT8TdVe1y98aj0tI76s5kI0zEklSfCn/72mIdN713RA6c6tI1s/cT5jdzrIEL6TF5PK9C95FdCHTLB4XeHQcbuvV865FwfGVvvQ6zge89Dm9scfThz8uVC62Ic5/cXqlZy90Llh/KGnbGb87em1cXqj17EQ/wF760ijvXl8jCD4uUHwHywxORkiBKRCsMQREhjABr/0hp5AjedmcN8q19o3OKiP2KX5q0DLvdOzlz8RdVWQIR2B/rLqv96/tO6dqO0gvy6vcntC/y2CEitvAYycxUA5mI88YhjBMVcNeGo1qBloHWbxERH/EHkKn0aeNn8ER88+fGrNIJIigi5UTm1PiauTlNNs4lovW8LUWt7mp2TwQ4g1iUKsFFYO4lE8gOnCL4JqiBEicgZKCfQxgnsjvYYw3BnhjkZ/BEZGG2w0BQRIiQ2v4X0W8zl4jB80AYSZxE7MIzvSpih7OPQdWQhdhjA+hrZLe1B0qTss0lIncZpyAii0iE/T0tiKDTZAOlMt9MJJMMYSQJ0qJNx+SdX5v1ASHL7DF5yxHsIacHWiARlfspYxDkEMaJVjHbWxBZRD6mX95bry/fvtpL+gpBlubPBUbAyo/1p7+q1jbAXvrJ5sIWzQB6iH2ObMhPaT8bzkxq/zQRmUMYHoJm5+Hg/7r2QV33kzSxr19VkFX6/L5uZYE8tWPm0wZxCCwich6fZrQcE8047Sy7qOu0AOuJHxecUz+Yp6XxN7KIAEdx7Ia3D3sv2LUr82VXRZteSKlcsyLfO4SP8Ac3l3m2BIBsAJB4/+AZtWcN55bvb5JHt1aoiIBAvORkFDaMZ76uVsGCJMlWRLTPGsBv5vyZ3DuSkWedM+BPq3lxd50+DCYinDYdaVGf4MQDBeAMd/OD1x8t/pWIBrKKxkzk/N9ZYYAYTR97e938QKjZ1gzYGNH5wrhHPc/8gEtUhIqYIBoSEWNAImIMSESMAYmI84bIFfxwIq+Z+zryAAAAAElFTkSuQmCC" InformativeScreenshot="e6c86263dffa3474447f19045933793f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='AWS Management Console' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
                                                                     <uix:TargetAnchorable.Anchors>
@@ -677,7 +731,7 @@
                                                               <Delay Duration="00:00:12" sap:VirtualizedContainerService.HintSize="954,90" sap2010:WorkflowViewState.IdRef="Delay_32" />
                                                               <uix:NCheckState DisplayName="Comprobar estado de aplicación 'NaturaPeruBot (1)'" sap:VirtualizedContainerService.HintSize="954,1052" sap2010:WorkflowViewState.IdRef="NCheckState_8" ScopeIdentifier="d4590b30-50af-47a2-9f7d-46f4c9036c74" Version="V3">
                                                                 <uix:NCheckState.IfExists>
-                                                                  <Sequence DisplayName="Aparece el destino" sap:VirtualizedContainerService.HintSize="450,453" sap2010:WorkflowViewState.IdRef="Sequence_150">
+                                                                  <Sequence DisplayName="Aparece el destino" sap:VirtualizedContainerService.HintSize="450,455" sap2010:WorkflowViewState.IdRef="Sequence_150">
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -748,7 +802,7 @@
                                                               <Delay DisplayName="Retraso" Duration="00:00:12" sap:VirtualizedContainerService.HintSize="954,90" sap2010:WorkflowViewState.IdRef="Delay_43" />
                                                               <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="954,141" sap2010:WorkflowViewState.IdRef="LogMessage_73" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Se llegó a ventana de queries&quot;]" />
                                                             </Sequence>
-                                                            <Sequence DisplayName="Escoger parámetros de consulta" sap:VirtualizedContainerService.HintSize="1140,83" sap2010:WorkflowViewState.IdRef="Sequence_114">
+                                                            <Sequence DisplayName="Escoger parámetros de consulta" sap:VirtualizedContainerService.HintSize="1140,81" sap2010:WorkflowViewState.IdRef="Sequence_114">
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1128,7 +1182,7 @@
                                                                 </uix:NCheckState.Target>
                                                               </uix:NCheckState>
                                                             </Sequence>
-                                                            <Sequence DisplayName="Ejecutar consulta" sap:VirtualizedContainerService.HintSize="450,583" sap2010:WorkflowViewState.IdRef="Sequence_115">
+                                                            <Sequence DisplayName="Ejecutar consulta" sap:VirtualizedContainerService.HintSize="1140,81" sap2010:WorkflowViewState.IdRef="Sequence_115">
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1149,21 +1203,21 @@
                                                               <Delay Duration="00:00:16" sap:VirtualizedContainerService.HintSize="388,91" sap2010:WorkflowViewState.IdRef="Delay_33" />
                                                               <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_78" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Se ejecutó consulta.&quot;]" />
                                                             </Sequence>
-                                                            <Sequence DisplayName="Comprobar si hubieron resultados" sap:VirtualizedContainerService.HintSize="1140,963" sap2010:WorkflowViewState.IdRef="Sequence_124">
+                                                            <Sequence DisplayName="Comprobar si hubieron resultados" sap:VirtualizedContainerService.HintSize="1140,950" sap2010:WorkflowViewState.IdRef="Sequence_124">
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
-                                                              <uix:NCheckState DisplayName="Comprobar estado de aplicación 'No hay resultados'" sap:VirtualizedContainerService.HintSize="1078,848" sap2010:WorkflowViewState.IdRef="NCheckState_5" ScopeIdentifier="d4590b30-50af-47a2-9f7d-46f4c9036c74" Version="V3">
+                                                              <uix:NCheckState DisplayName="Comprobar estado de aplicación 'No hay resultados'" sap:VirtualizedContainerService.HintSize="1078,839" sap2010:WorkflowViewState.IdRef="NCheckState_5" ScopeIdentifier="d4590b30-50af-47a2-9f7d-46f4c9036c74" Version="V3">
                                                                 <uix:NCheckState.IfExists>
-                                                                  <Sequence DisplayName="Aparece el destino" sap:VirtualizedContainerService.HintSize="512,506" sap2010:WorkflowViewState.IdRef="Sequence_117">
+                                                                  <Sequence DisplayName="Aparece el destino" sap:VirtualizedContainerService.HintSize="512,501" sap2010:WorkflowViewState.IdRef="Sequence_117">
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                       </scg:Dictionary>
                                                                     </sap:WorkflowViewStateService.ViewState>
-                                                                    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="450,83" sap2010:WorkflowViewState.IdRef="Assign_17">
+                                                                    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="450,82" sap2010:WorkflowViewState.IdRef="Assign_17">
                                                                       <Assign.To>
                                                                         <OutArgument x:TypeArguments="x:Boolean">[Hay_resultados_en_consulta]</OutArgument>
                                                                       </Assign.To>
@@ -1171,8 +1225,8 @@
                                                                         <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                                                                       </Assign.Value>
                                                                     </Assign>
-                                                                    <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="450,145" sap2010:WorkflowViewState.IdRef="LogMessage_79" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;No hay resultados en la consulta.&quot;]" />
-                                                                    <Sequence DisplayName="Cerrar sesión Cloud Watch" sap:VirtualizedContainerService.HintSize="450,83" sap2010:WorkflowViewState.IdRef="Sequence_116">
+                                                                    <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="450,143" sap2010:WorkflowViewState.IdRef="LogMessage_79" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;No hay resultados en la consulta.&quot;]" />
+                                                                    <Sequence DisplayName="Cerrar sesión Cloud Watch" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_116">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1219,13 +1273,13 @@
                                                                   </Sequence>
                                                                 </uix:NCheckState.IfExists>
                                                                 <uix:NCheckState.IfNotExists>
-                                                                  <Sequence DisplayName="No aparece el destino" sap:VirtualizedContainerService.HintSize="512,629" sap2010:WorkflowViewState.IdRef="Sequence_123">
+                                                                  <Sequence DisplayName="No aparece el destino" sap:VirtualizedContainerService.HintSize="512,622" sap2010:WorkflowViewState.IdRef="Sequence_123">
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                       </scg:Dictionary>
                                                                     </sap:WorkflowViewStateService.ViewState>
-                                                                    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="450,83" sap2010:WorkflowViewState.IdRef="Assign_18">
+                                                                    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="450,82" sap2010:WorkflowViewState.IdRef="Assign_18">
                                                                       <Assign.To>
                                                                         <OutArgument x:TypeArguments="x:Boolean">[Hay_resultados_en_consulta]</OutArgument>
                                                                       </Assign.To>
@@ -1233,8 +1287,8 @@
                                                                         <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                                                                       </Assign.Value>
                                                                     </Assign>
-                                                                    <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="450,145" sap2010:WorkflowViewState.IdRef="LogMessage_81" Level="[UiPath.Core.Activities.LogLevel.Fatal]" Message="[&quot;Sí hay resultados en la consulta.&quot;]" />
-                                                                    <Sequence DisplayName="Descargar resultados" sap:VirtualizedContainerService.HintSize="450,83" sap2010:WorkflowViewState.IdRef="Sequence_121">
+                                                                    <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="450,143" sap2010:WorkflowViewState.IdRef="LogMessage_81" Level="[UiPath.Core.Activities.LogLevel.Fatal]" Message="[&quot;Sí hay resultados en la consulta.&quot;]" />
+                                                                    <Sequence DisplayName="Descargar resultados" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_121">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1376,7 +1430,7 @@
                                                                       <Delay Duration="00:00:15" sap:VirtualizedContainerService.HintSize="388,91" sap2010:WorkflowViewState.IdRef="Delay_35" />
                                                                       <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_82" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Se descargaron los resultados.&quot;]" />
                                                                     </Sequence>
-                                                                    <Sequence DisplayName="Cerrar sesión Cloud Watch" sap:VirtualizedContainerService.HintSize="450,83" sap2010:WorkflowViewState.IdRef="Sequence_122">
+                                                                    <Sequence DisplayName="Cerrar sesión Cloud Watch" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_122">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1452,11 +1506,11 @@
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <av:Point x:Key="ShapeLocation">550,1619.5</av:Point>
-                                                          <av:Size x:Key="ShapeSize">200,83</av:Size>
-                                                          <av:PointCollection x:Key="ConnectorLocation">650,1702.5 650,1729.5</av:PointCollection>
+                                                          <av:Size x:Key="ShapeSize">200,81</av:Size>
+                                                          <av:PointCollection x:Key="ConnectorLocation">650,1700.5 650,1729.5</av:PointCollection>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
-                                                      <Sequence DisplayName="Cerrar sesión portal AWS" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_148">
+                                                      <Sequence DisplayName="Cerrar sesión portal AWS" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_148">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1507,11 +1561,11 @@
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <av:Point x:Key="ShapeLocation">550,1729.5</av:Point>
-                                                              <av:Size x:Key="ShapeSize">200,83</av:Size>
-                                                              <av:PointCollection x:Key="ConnectorLocation">650,1812.5 650,1842.5 650.5,1842.5 650.5,1846.5</av:PointCollection>
+                                                              <av:Size x:Key="ShapeSize">200,81</av:Size>
+                                                              <av:PointCollection x:Key="ConnectorLocation">650,1810.5 650,1840.5 650.5,1840.5 650.5,1846.5</av:PointCollection>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                          <Sequence DisplayName="Crear carpeta de salida" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                                          <Sequence DisplayName="Crear carpeta de salida" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_32">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1530,11 +1584,11 @@
                                                             <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_28" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Se creó carpeta de salida: &quot; + Activo_Ruta_de_salida + &quot;\&quot; + Nombre_de_carpeta_nueva]" />
                                                           </Sequence>
                                                           <FlowStep.Next>
-                                                            <FlowDecision x:Name="__ReferenceID15" Condition="[Hay_resultados_en_consulta]" DisplayName="¿Resultados en consulta?" sap:VirtualizedContainerService.HintSize="138,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
+                                                            <FlowDecision x:Name="__ReferenceID15" Condition="[Hay_resultados_en_consulta]" DisplayName="¿Resultados en consulta?" sap:VirtualizedContainerService.HintSize="137,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                   <av:Point x:Key="ShapeLocation">581.5,1846.5</av:Point>
-                                                                  <av:Size x:Key="ShapeSize">138,87</av:Size>
+                                                                  <av:Size x:Key="ShapeSize">137,87</av:Size>
                                                                   <av:PointCollection x:Key="TrueConnector">581.5,1890 470,1890</av:PointCollection>
                                                                   <av:PointCollection x:Key="FalseConnector">718.5,1890 790,1890</av:PointCollection>
                                                                 </scg:Dictionary>
@@ -1544,21 +1598,21 @@
                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                       <av:Point x:Key="ShapeLocation">270,1864</av:Point>
-                                                                      <av:Size x:Key="ShapeSize">200,53</av:Size>
+                                                                      <av:Size x:Key="ShapeSize">200,52</av:Size>
                                                                       <av:PointCollection x:Key="ConnectorLocation">370,1916 370,1946 650,1946 650,1999.5</av:PointCollection>
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                  <ui:LogMessage DisplayName="Registrar mensaje - Continúa proceso porque sí hay resultados" sap:VirtualizedContainerService.HintSize="200,53" sap2010:WorkflowViewState.IdRef="LogMessage_46" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Continúa proceso porque sí hay resultados de logs de la consulta.&quot;]" />
+                                                                  <ui:LogMessage DisplayName="Registrar mensaje - Continúa proceso porque sí hay resultados" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_46" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Continúa proceso porque sí hay resultados de logs de la consulta.&quot;]" />
                                                                   <FlowStep.Next>
                                                                     <FlowStep x:Name="__ReferenceID12">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <av:Point x:Key="ShapeLocation">550,1999.5</av:Point>
-                                                                          <av:Size x:Key="ShapeSize">200,83</av:Size>
-                                                                          <av:PointCollection x:Key="ConnectorLocation">650,2082.5 650,2129.5</av:PointCollection>
+                                                                          <av:Size x:Key="ShapeSize">200,81</av:Size>
+                                                                          <av:PointCollection x:Key="ConnectorLocation">650,2080.5 650,2129.5</av:PointCollection>
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                      <Sequence DisplayName="Mover y comprimir archivos descargados" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                                                                      <Sequence DisplayName="Mover y comprimir archivos descargados" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_49">
                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1666,11 +1720,11 @@
                                                                           <sap:WorkflowViewStateService.ViewState>
                                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                               <av:Point x:Key="ShapeLocation">550,2129.5</av:Point>
-                                                                              <av:Size x:Key="ShapeSize">200,83</av:Size>
-                                                                              <av:PointCollection x:Key="ConnectorLocation">650,2212.5 650,2284</av:PointCollection>
+                                                                              <av:Size x:Key="ShapeSize">200,81</av:Size>
+                                                                              <av:PointCollection x:Key="ConnectorLocation">650,2210.5 650,2284</av:PointCollection>
                                                                             </scg:Dictionary>
                                                                           </sap:WorkflowViewStateService.ViewState>
-                                                                          <Sequence DisplayName="Envío de queue al orquestador" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                                                                          <Sequence DisplayName="Envío de queue al orquestador" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_56">
                                                                             <sap:WorkflowViewStateService.ViewState>
                                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1699,10 +1753,10 @@
                                                                               <sap:WorkflowViewStateService.ViewState>
                                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                   <av:Point x:Key="ShapeLocation">550,2284</av:Point>
-                                                                                  <av:Size x:Key="ShapeSize">200,53</av:Size>
+                                                                                  <av:Size x:Key="ShapeSize">200,52</av:Size>
                                                                                 </scg:Dictionary>
                                                                               </sap:WorkflowViewStateService.ViewState>
-                                                                              <ui:LogMessage DisplayName="Registrar mensaje - fin del proceso" sap:VirtualizedContainerService.HintSize="200,53" sap2010:WorkflowViewState.IdRef="LogMessage_38" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Proceso finalizado.&quot;]" />
+                                                                              <ui:LogMessage DisplayName="Registrar mensaje - fin del proceso" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_38" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Proceso finalizado.&quot;]" />
                                                                             </FlowStep>
                                                                           </FlowStep.Next>
                                                                         </FlowStep>
@@ -1716,20 +1770,20 @@
                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                       <av:Point x:Key="ShapeLocation">790,1864</av:Point>
-                                                                      <av:Size x:Key="ShapeSize">200,53</av:Size>
+                                                                      <av:Size x:Key="ShapeSize">200,52</av:Size>
                                                                       <av:PointCollection x:Key="ConnectorLocation">990,1890 1020,1890</av:PointCollection>
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                  <ui:LogMessage DisplayName="Registrar mensaje - Finalizar proceso falta de resultados" sap:VirtualizedContainerService.HintSize="200,53" sap2010:WorkflowViewState.IdRef="LogMessage_45" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Finaliza proceso por no haber resultados de logs en la consulta.&quot;]" />
+                                                                  <ui:LogMessage DisplayName="Registrar mensaje - Finalizar proceso falta de resultados" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_45" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Finaliza proceso por no haber resultados de logs en la consulta.&quot;]" />
                                                                   <FlowStep.Next>
                                                                     <FlowStep x:Name="__ReferenceID20">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <av:Point x:Key="ShapeLocation">1020,1864</av:Point>
-                                                                          <av:Size x:Key="ShapeSize">200,53</av:Size>
+                                                                          <av:Size x:Key="ShapeSize">200,52</av:Size>
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                      <ui:LogMessage DisplayName="Registrar mensaje - fin del proceso" sap:VirtualizedContainerService.HintSize="200,53" sap2010:WorkflowViewState.IdRef="LogMessage_50" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Proceso finalizado.&quot;]" />
+                                                                      <ui:LogMessage DisplayName="Registrar mensaje - fin del proceso" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_50" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Proceso finalizado.&quot;]" />
                                                                     </FlowStep>
                                                                   </FlowStep.Next>
                                                                 </FlowStep>
@@ -1757,22 +1811,22 @@
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Utilizar Navegador Chrome: Amazon Web Services (AWS)" sap:VirtualizedContainerService.HintSize="1158,1454" sap2010:WorkflowViewState.IdRef="NApplicationCard_14" InteractionMode="DebuggerApi" ScopeGuid="529a8a92-6309-4774-91aa-0b0579f3c2cd" Version="V2" WindowResize="Maximize">
+                                                    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Utilizar Navegador Chrome: Amazon Web Services (AWS)" sap:VirtualizedContainerService.HintSize="1158,1416" sap2010:WorkflowViewState.IdRef="NApplicationCard_14" InteractionMode="DebuggerApi" ScopeGuid="529a8a92-6309-4774-91aa-0b0579f3c2cd" Version="V2" WindowResize="Maximize">
                                                       <uix:NApplicationCard.Body>
                                                         <ActivityAction x:TypeArguments="x:Object">
                                                           <ActivityAction.Argument>
                                                             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                                                           </ActivityAction.Argument>
-                                                          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="1124,1237" sap2010:WorkflowViewState.IdRef="Sequence_144">
+                                                          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="1124,1199" sap2010:WorkflowViewState.IdRef="Sequence_144">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
                                                             <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="1062,143" sap2010:WorkflowViewState.IdRef="LogMessage_93" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Se abrió navegador en Portal AWS para comprobar si la sesión está iniciada&quot;]" />
-                                                            <uix:NCheckState DisplayName="Comprobar estado de aplicación 'Sign out'" sap:VirtualizedContainerService.HintSize="1062,939" sap2010:WorkflowViewState.IdRef="NCheckState_7" ScopeIdentifier="529a8a92-6309-4774-91aa-0b0579f3c2cd" Version="V3">
+                                                            <uix:NCheckState DisplayName="Comprobar estado de aplicación 'Sign out'" sap:VirtualizedContainerService.HintSize="1062,901" sap2010:WorkflowViewState.IdRef="NCheckState_7" ScopeIdentifier="529a8a92-6309-4774-91aa-0b0579f3c2cd" Version="V3">
                                                               <uix:NCheckState.IfExists>
-                                                                <Sequence DisplayName="Aparece el destino" sap:VirtualizedContainerService.HintSize="512,682" sap2010:WorkflowViewState.IdRef="Sequence_142">
+                                                                <Sequence DisplayName="Aparece el destino" sap:VirtualizedContainerService.HintSize="512,684" sap2010:WorkflowViewState.IdRef="Sequence_142">
                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1787,7 +1841,7 @@
                                                                       <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                                                                     </Assign.Value>
                                                                   </Assign>
-                                                                  <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="450,141" sap2010:WorkflowViewState.IdRef="LogMessage_99" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Se procede a abrir Cloud Watch&quot;]" />
+                                                                  <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="450,143" sap2010:WorkflowViewState.IdRef="LogMessage_99" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Se procede a abrir Cloud Watch&quot;]" />
                                                                   <Sequence DisplayName="Abrir consola de administración" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_147">
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1881,11 +1935,11 @@
                                                     </uix:NApplicationCard>
                                                   </Sequence>
                                                   <FlowStep.Next>
-                                                    <FlowDecision x:Name="__ReferenceID27" Condition="[Sesion_Portal_AWS_iniciada]" DisplayName="¿Sesión Portal AWS iniciada?" sap:VirtualizedContainerService.HintSize="156,87" sap2010:WorkflowViewState.IdRef="FlowDecision_5" True="{x:Reference __ReferenceID0}">
+                                                    <FlowDecision x:Name="__ReferenceID27" Condition="[Sesion_Portal_AWS_iniciada]" DisplayName="¿Sesión Portal AWS iniciada?" sap:VirtualizedContainerService.HintSize="155,87" sap2010:WorkflowViewState.IdRef="FlowDecision_5" True="{x:Reference __ReferenceID0}">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <av:Point x:Key="ShapeLocation">863,1266.5</av:Point>
-                                                          <av:Size x:Key="ShapeSize">156,87</av:Size>
+                                                          <av:Size x:Key="ShapeSize">155,87</av:Size>
                                                           <av:PointCollection x:Key="FalseConnector">1019,1310 1049,1310 1049,1311 1100,1311</av:PointCollection>
                                                           <av:PointCollection x:Key="TrueConnector">863,1310 650,1310 650,1519.5</av:PointCollection>
                                                         </scg:Dictionary>
@@ -1895,11 +1949,11 @@
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <av:Point x:Key="ShapeLocation">1100,1269.5</av:Point>
-                                                              <av:Size x:Key="ShapeSize">200,83</av:Size>
-                                                              <av:PointCollection x:Key="ConnectorLocation">1200,1352.5 1200,1561 750,1561</av:PointCollection>
+                                                              <av:Size x:Key="ShapeSize">200,81</av:Size>
+                                                              <av:PointCollection x:Key="ConnectorLocation">1200,1350.5 1200,1561 750,1561</av:PointCollection>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                          <Sequence DisplayName="Iniciar sesión en portal AWS" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_89">
+                                                          <Sequence DisplayName="Iniciar sesión en portal AWS" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_89">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
