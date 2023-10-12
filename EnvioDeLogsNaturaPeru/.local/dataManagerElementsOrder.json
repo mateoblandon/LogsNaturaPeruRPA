@@ -12,6 +12,9 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "Activo_Respuesta_cuando_no_hay_logs&Flowchart_1",
+        "Activo_Respuesta_cuando_si_hay_logs&Flowchart_1",
+        "Hay_resultados&Flowchart_1",
         "Activo_Lista_de_correos_de_copia&Flowchart_1",
         "Debe_parar&Flowchart_1",
         "Activo_Lista_de_correos_de_destinatarios&Flowchart_1",
